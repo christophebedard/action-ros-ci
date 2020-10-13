@@ -10671,6 +10671,7 @@ function run() {
             let tokenAuth = importToken;
             if (tokenAuth !== "") {
                 tokenAuth = tokenAuth.concat("@");
+                tokenAuth = tokenAuth.replace("\n", "");
             }
             const headRef = process.env.GITHUB_HEAD_REF;
             const commitRef = headRef || github.context.sha;

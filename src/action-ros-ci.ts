@@ -226,6 +226,7 @@ async function run() {
 		let tokenAuth = importToken;
 		if (tokenAuth !== "") {
 			tokenAuth = tokenAuth.concat("@");
+			tokenAuth = tokenAuth.replace("\n", "");
 		}
 		const headRef = process.env.GITHUB_HEAD_REF as string;
 		const commitRef = headRef || github.context.sha;
@@ -238,11 +239,7 @@ async function run() {
     url: 'https://${tokenAuth}github.com/${repoFullName}.git'
     version: '${commitRef}'`;
 		fs.writeFileSync(repoFilePath, repoFileContent);
-		await execBashCommand(
-			"cat package.repo",
-			undefined,
-			options
-		);
+		await execBashCommand("cat package.repo", undefined, options);
 		await execBashCommand(
 			"vcs import --force --recursive src/ < package.repo",
 			undefined,
