@@ -279,12 +279,12 @@ async function run() {
 		await io.mkdirP(rosWorkspaceDir + "/src");
 
 		if (importToken !== "") {
-			const config = `
-[url "https://${importToken}@github.com"]
-	insteadOf = https://github.com
-[url "http://${importToken}@github.com"]
-	insteadOf = http://github.com`;
-			fs.appendFileSync(path.join(os.homedir(), ".gitconfig"), config);
+			// 			const config = `
+			// [url "https://${importToken}@github.com"]
+			// 	insteadOf = https://github.com
+			// [url "http://${importToken}@github.com"]
+			// 	insteadOf = http://github.com`;
+			// 			fs.appendFileSync(path.join(os.homedir(), ".gitconfig"), config);
 		}
 
 		const options = {

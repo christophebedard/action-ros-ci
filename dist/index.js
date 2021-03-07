@@ -11053,12 +11053,12 @@ function run() {
             // Checkout ROS 2 from source and install ROS 2 system dependencies
             yield io.mkdirP(rosWorkspaceDir + "/src");
             if (importToken !== "") {
-                const config = `
-[url "https://${importToken}@github.com"]
-	insteadOf = https://github.com
-[url "http://${importToken}@github.com"]
-	insteadOf = http://github.com`;
-                fs_1.default.appendFileSync(path.join(os.homedir(), ".gitconfig"), config);
+                // 			const config = `
+                // [url "https://${importToken}@github.com"]
+                // 	insteadOf = https://github.com
+                // [url "http://${importToken}@github.com"]
+                // 	insteadOf = http://github.com`;
+                // 			fs.appendFileSync(path.join(os.homedir(), ".gitconfig"), config);
             }
             const options = {
                 cwd: rosWorkspaceDir,
